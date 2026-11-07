@@ -1,135 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name = "author" content="Go comapny">
-<meta name="keywords" content=GO,Kulima,Farm,Kulimaguide,Farming>
- <title>Kulimaguide Services | Connect Farmers, Suppliers, Buyers & Transporters</title>
- <meta name="description" content="Kulimaguide Services connects farmers to trusted suppliers,
-buyers, and reliable transporters. Plus free farming tips for different crops, soils, and weather.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Go company">
+<meta name="keywords" content="GO, Kulima, Farm, Kulimaguide, Farming">
+<title>Kulimaguide Services | Connect Farmers, Suppliers, Buyers & Transporters</title>
+<meta name="description" content="Kulimaguide Services connects farmers to trusted suppliers, buyers, and reliable transporters. Plus free farming tips for different crops, soils, and weather.">
 <link rel="stylesheet" href="style.css">
-
 </head>
-
-
 <body class="layout">
-<!-- ========= HEADER: Logo and Business Name and purpose ========= -->
-<!-- This content will stay the same for all pages-->
 
+<!-- HEADER: Logo and Navigation -->
 <header>
-<img class="logo" src ="/images/logo.png" alt="Kulimaguide Services Logo" width="200" height="200">
-<!-- ========= NAV: Main Site Navigation ========= -->
-<!-- This part will stay the same for all pages-->
+<img class="logo" src="images/logo.png" alt="Kulimaguide Services Logo" width="200" height="200">
 <nav class="nav_links">
 <ul>
 <li><a href="index.html">Home</a></li>
- <li><a href="suppliers.html">Find Suppliers</a></li>
+<li><a href="suppliers.html">Find Suppliers</a></li>
 <li><a href="buyers.html">Find Buyers</a></li>
 <li><a href="transporters.html">Find Transporters</a></li>
 <li><a href="tips.html">Farming Tips</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
-</nav> 
+</nav>
 </header>
 
 <main>
- <h1>GROW MORE. SELL SMARTER. SPEND LESS.</h1>
- <!-- ========= MAIN: Primary Page Content ========= -->
- <!-- This conent of the  Main page will change -->
- <!-- Hero Section -->
- <section class="mainpicture">
+<!-- SECTION 1: Hero - matches wireframe -->
+<section class="mainpicture">
+<h1>GROW MORE. SELL SMART. SPEND LESS.</h1>
+<h3>Our Purpose</h3>
+<p>Kulimaguide does not handle payments. We connect you directly to trusted suppliers, 
+verified buyers, and reliable transporters. You deal directly with them.</p>
+<p>We also provide free farming tips tailored to different crops, soil types,
+and weather conditions.</p>
+<!-- WIREFRAME ORDER: SELLER first, then BUYER -->
+<a href="suppliers.html" class="hero-btn">SELLER</a>
+<a href="buyers.html" class="hero-btn">BUYER</a>
+</section>
 
-
- <h3>Our Purpose</h3>
- <p>Kulimaguide does not handle payments. We connect you directly to trusted suppliers, 
- verified buyers, and reliable transporters. You deal directly with them.</p>
- <p>We also provide free farming tips tailored to different crops, soil types,
- and weather conditions.</p>
-<button> Buyer </button>
- <button> Seller </button>
-
- <section>
-<!-- Core Services Section -->
- <section class="cards">
-<h2>How Kulimaguide Works</h2>
- <article class="grid">
- <h3>1. Trusted Suppliers</h3>
- <p>Find verified seed, fertilizer, and equipment suppliers in your area.</p>
+<!-- SECTION 2: 4 simple boxes - matches wireframe -->
+<section class="cards">
+<article class="grid">
+<h3>Browse <br>Suppliers</h3>
+<p>Find verified seed, fertilizer, and equipment suppliers in your area.</p>
+<img src="images/IMG-20261106-WA6958.jpg" alt="Farmer buying seed and fertilizer" class="card-img">
 <a href="suppliers.html">Browse Suppliers</a>
- </article>
-
- <article class="grid">
- <h3>2. Verified Buyers</h3>
- <p>Connect with buyers looking for your maize, soya, vegetables and more.</p>
- <a href="buyers.html">Browse Buyers</a>
 </article>
 
- <article class="grid">
- <h3>3. Reliable Transporters</h3>
+<article class="grid">
+<h3>Browse <br>Buyers</h3>
+<p>Connect with buyers looking for your maize, soya, vegetables and more.</p>
+<img src="images/IMG-20261106-WA4152.jpg" alt="Bags of soya ready for buyers" class="card-img">
+<a href="buyers.html">Browse Buyers</a>
+</article>
+
+<article class="grid">
+<h3>Browse Transporters</h3>
 <p>Book transporters to move your produce from farm to market safely or home.</p>
- <a href="transporters.html">Browse Transporters</a>
+<img src="images/IMG-20261106-WA8330.jpg" alt="Truck transporting farm produce" class="card-img">
+<a href="transporters.html">Browse Transporters</a>
 </article>
 
- <article class="grid">
-<h3>4. Reliable Farming tips</h3>
- <p>Get the lastest Farming tips for your maize,soyabeans and others.</p>
- <a href="tips.html">Browse Farming Tips</a>
+<article class="grid">
+<h3>Get <br>Farming Tips</h3>
+<p>Get the latest Farming tips for your maize, soyabeans and others.</p>
+<img src="images/IMG-20261106-WA2945.jpg" alt="Farmer checking maize crop" class="card-img">
+<a href="tips.html">Get <br> Farming Tips</a>
 </article>
- </section>
+</section>
 
-
-
- <!-- ASIDE: Secondary info -->
+<!-- ASIDE: Right sidebar - matches wireframe -->
 <aside class="ASIDE">
-<h3>Important Note</h3>
-<p>Kulimaguide Services only facilitates connections. All payments and agreements
- are made directly between you and the supplier, buyer, or transporter.</p>
+<div class="aside-card">
+<h3>IMPORTANT NOTES</h3>
+<p>We only connect, we do not sell, buy or transport any goods!</p>
+</div>
 
-</aside>
-
- <article class="quick">
-<h3>Quick Tools</h3>
- <ul>
- <li><a href="tips.html#weather">Weather-Based Planting Guide</a></li>
+<div class="aside-card">
+<h3>QUICK TOOLS</h3>
+<ul>
+<li><a href="tips.html#weather">Weather-Based Planting Guide</a></li>
 <li><a href="tips.html#soil">Soil Type Matcher</a></li>
- </ul>
- </article>
+</ul>
+</div>
+</aside>
 </main>
 
-<!-- ========= FOOTER: Copyright and Contact ========= -->
-<!-- This part will stay the same for all pages-->
- <footer class="foot">
-
+<!-- FOOTER: Matches wireframe -->
+<footer class="foot">
 <article class="Contact">
-<a href="mailto:Kulimaguide01@gmail.com">Email us: Kulimaguide01@gmail.com</a>
-<a href="https://www.facebook.com/Kulimaguide">Find us on facebook</a>
- <a href="https://wa.me/260986754534">Contact us on Whatsapp</a>
+<a href="mailto:kabwegift084@gmail.com">Email: Kulimaguide01@gmail.com</a>
+<a href="https://www.facebook.com/Kulimaguideservices">Facebook: Kulimaguideservices</a>
+<a href="https://wa.me/260766254304">Whatsapp: +260 766 254 304</a>
 </article>
 
 <article class="location">
 <a href="https://www.google.com/maps/search/?api=1&query=Plot+12+Mungwi+Road+Town+Kasama+Northern+Province+Zambia">
- Kulimaguide Services<br>
- Plot 12 Mungwi Road,Town Center<br>
- Kasama,Northern Province,Zambia
- </a>
- </article>
+Kulimaguide Services<br>
+Plot 12 Mungwi Road, Town Center<br>
+Kasama, Northern Province, Zambia
+</a>
+</article>
 
 <article class="Partner">
- <a href="https://uagzambia.com">United Afrrica Grain Ltd(UAG)</a>
+<a href="https://uagzambia.com">United Afrrica Grain Ltd(UAG)</a>
 <a href="https://Farmdepot.co.zm">Farm Depot</a>
- <a href="https://championagrow.co.zm">Champion Agro World</a>
+<a href="https://championagrow.co.zm">Champion Agro World</a>
 <a href="https://farmesoutgrower.com">Farmers' Out Grower Foundation(FOF)</a>
 </article>
 
-
-
- <p class="Disclaimer"><strong>Disclaimer:</strong> We do not process payments or hold goods. We only connect you.</p>
-<p class="rights"> &copy; 2026 Kulimaguide Services. All Rights reserved.</p>
+<hr><hr><hr>
+<p class="Disclaimer"><strong>Disclaimer:</strong> We do not process payments or hold goods. We only connect you.</p>
+<p class="rights">&copy; 2026 Kulimaguide Services. All Rights reserved.</p>
 </footer>
-
 
 </body>
 </html>
