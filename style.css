@@ -103,8 +103,8 @@ margin: 0 auto 30px;
  display: inline-block;
  text-decoration: none;
  border: none;
- background: #c5e8b7;
- color: #143312;
+ background: #298804;
+ color: #dfe4df;
  padding: 16px 52px;
  border-radius: 50px;
  font-weight: 800;
@@ -116,7 +116,7 @@ transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
- background: #a8d896;
+ background: #144203;
 }
 
 /* ===== SECTION 2 - 4 BOXES ===== */
