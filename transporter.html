@@ -7,18 +7,18 @@
     <meta name="description" content="Kulimaguide services only connect you buyers,sellers and transporters without processing any form of payment">
     <meta name="keywords" content="Farming,Kulima,guide,Farm">
     <title>Kulimaguide Services | Connect to Buyers, Sellers and Transporters</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
     <link rel="javascript" href="">
 </head>
 
-<body>
+<body class="layout">
     <!-- Header section with navigation inside -->
      <!--This part of the webpage will remain the same for all pages-->
      <!--It will consist of the logo and the navigation links-->
     
     <header>
-      <img src="/images/logo.png" width="200" height="200"><!--For the logo-->
-        <nav><!--For the navigation links-->
+      <img class="logo" src="images\logo.png" width="200" height="200"><!--For the logo-->
+        <nav class="nav_links"><!--For the navigation links-->
             <ul>
               <li> <a href="index.html">Home</a></li>
               <li> <a href="buyer.html">Find Buyer</a> </li>
@@ -32,12 +32,14 @@
 
     <!--The main content of the webpage-->
     <!--This part of the webpage will change depending on the webpage-->
-    <main>
+    
+     <main class="main">
+        
         <section class="filters">
-            <h2>
+           <h3>
                 FIND RELIABLE TRANSPORTERS FOR YOUR HARVEST
-            </h2>
-        <select name="from filter" id="from filter">
+            </h3> 
+        <select name="fromFilter" class="filter">
             <option value="From">From</option>
             <option value="Kasama">Kasama</option>
             <option value="Chinsali">Chinsali</option>
@@ -60,7 +62,7 @@
             <option value="Monze">Monze</option>
             <option value="Mazabuka">Mazabuka</option>
          </select>&nbsp;&nbsp;
-         <select name="To filter" id="To filter">
+         <select name="ToFilter" class="filter">
           <option value="To">To</option>
             <option value="Kasama">Kasama</option>
             <option value="Chinsali">Chinsali</option>
@@ -83,7 +85,7 @@
             <option value="Monze">Monze</option>
             <option value="Mazabuka">Mazabuka</option>
          </select>&nbsp;&nbsp;
-         <select name="Vehicle filter" id="Vehicle filter">
+         <select name="VehicleFilter" class="filter">
             <option value="Vehicle">Vehicle Type</option>
             <option value="Motorbike">Motorbike</option>
             <option value="pickup">pickup</option>
@@ -95,7 +97,7 @@
             <option value="Truck">Truck</option>
             <option value="TATA">TATA</option>
          </select>&nbsp;&nbsp;
-         <select name="Capacity filter" id="Capacity filter">
+         <select name="CapacityFilter" class="filter">
             <option value="capacity">Vehicle capacity</option>
             <option value="1 tonne">1 tonne</option>
             <option value="2 tonnes">2 tonnes</option>
@@ -119,15 +121,22 @@
             <option value="20 tonnes">20 to 30 tonnes</option>
         </select>
         <br><br>
-        <input type="date" name="date filter" id="date "> &nbsp;&nbsp;
-        <label for="Price">Price</label> 
-        <input type="number" name="price filter" id="price" placeholder="ZMW"><br><br>
-        <input type="search" name="search filter" id="search" placeholder="search">
-      <button>submit</button>
+        <input class="filter" type="date" name="date filter" id="date "> &nbsp;&nbsp;
+        <label class="filter" for="Price">Price</label> 
+        <input class="filter"  type="number" name="price filter" id="price" placeholder="ZMW"><br><br>
+        <input class="filter" type="search" name="search filter" id="search" placeholder="search">
+      <button class="filter" >submit</button>
         </section>
-        <section>
-             <section class="transporters list">
-            <article class="first transporter">
+
+        <!-- <article class="grid">
+         <h3>Browse Transporters</h3>
+        <p>Book transporters to move your produce from farm to market safely or home.</p>
+        <img src="images/IMG-20261106-WA8330.jpg" alt="Truck transporting farm produce" class="card-img">
+        <a href="transporters.html">Browse Transporters</a>
+        </article> -->
+        
+        <section class="transporters_list">
+            <article class="firstTransporter">
             
                 <ul>
                     <h3>1</h3>
@@ -138,10 +147,10 @@
                   <li><b>Route:</b> Kasama to Ndola</li>
                   <li><b>Price per km:</b> 20 ZMW</li>
                   <li><b>Availability:</b> Available</li>
-                  <li><b>Phone/WhatsApp:</b> +260 971234567 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
+                  <li><b>Phone/WhatsApp:</b> 0971234567 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
                 </ul>  
             </article>
-            <article class="second transporter">
+            <article class="secondTransporter">
                  <ul>
                     <h3>2</h3>
                   <li><b>Transporter's name:</b> J. Northern Logistics</li>
@@ -154,7 +163,7 @@
                   <li><b>Phone/WhatsApp:</b> +260 967783344 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
                 </ul>  
             </article>
-            <article class="third transporter">
+            <article class="thirdTransporter">
                  <ul>
                     <h3>3</h3>
                   <li><b>Transporter's name:</b> Mansa Haulers</li>
@@ -164,10 +173,10 @@
                   <li><b>Route:</b>Mansa to Kasama</li>
                   <li><b>Price per km:</b> 12 ZMW</li>
                   <li><b>Availability:</b> Available</li>
-                  <li><b>Phone/WhatsApp:</b> +260 975552211 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
+                  <li><b>Phone/WhatsApp:</b> +26075552211 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
                 </ul>  
             </article>
-            <article class=" fourth transporter">
+            <article class=" fourthTransporter">
                 <ul>
                     <h3>4</h3>
                   <li><b>Transporter's name:</b> Agro Move Services</li>
@@ -177,25 +186,25 @@
                   <li><b>Route:</b>Kitwe Ndola</li>
                   <li><b>Price per km:</b> 4 ZMW</li>
                   <li><b>Availability:</b> Available</li>
-                  <li><b>Phone/WhatsApp:</b> +260 953349988 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
+                  <li><b>Phone/WhatsApp:</b> +260953349988 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
                 </ul>  
             </article>
         </section>
-        <aside>
-            <article>
-                <h4>IMPORTANT NOTICE</h4>
+        <aside class="aside">
+            <article class="notes">
+                <h3>IMPORTANT NOTICE</h3><br>
                 <p>
                     We only connect, we do not sell, buy or transport any form of goods.
                 </p>
             </article> 
-            <article>
-                <h4>QUICK TOOLS</h4>
+            <article class="tools">
+                <h3>QUICK TOOLS</h3><br>
                 <ul>
                     <li><a href="tips.html">Weather-Based Planting Guide</a></li>
                     <li><a href="tips.html">Soil Type Matcher</a></li>
                 </ul>
             </article>
-            <article>
+            <article class="howitworks">
                 <ul>
                     <li><b>HOW IT WORKS</b></li><br>
                     <li><b>Search</b></li>
@@ -212,30 +221,34 @@
    
     </main>
 
-    <!--Footer of the webpage-->
-    <!--This part of the webpage will remain the same for all webpages-->
-   <footer>
-      <section class="handlers">
-            <article><!--For social medial handlers links-->
-                <a href="mailto:kabwegift084@gmail.com">Kulimaguide23@gmail.com</a><br>
-                <a href="https//:www.facebook/Kulimaguideservices">Kulimaguide Services</a><br>
-                <a href="https://www.wa.com/+260766254304"> 0766254304</a>
-            </article><br>
 
-            <article><!--For location links-->
-                Kulimaguide Services<br>
-                Plot 12 Mungwi Road,Town Center<br>
-                Kasama, Northern Province, Zambia
-            </article><br>
+   <!-- FOOTER: Matches wireframe -->
+<footer class="foot">
+<article class="Contact">
+<a href="mailto:kabwegift084@gmail.com">Email: Kulimaguide01@gmail.com</a>
+<a href="https://www.facebook.com/Kulimaguideservices">Facebook: Kulimaguideservices</a>
+<a href="https://wa.me/260766254304">Whatsapp: +260 766 254 304</a>
+</article>
 
-            <article><!--Partners-->
-                Zambia National Farmers Union(ZNFU)<br> 
-                Patents and Companies Registration Agency(PACRA)<br> 
-                Ministry of Agriculture
-            </article>
-        </section>
-    </footer>
-      <!--Disclaimer-->
-    <p>Disclaimer: We do not process payments or hold goods. We only connect you.<p>
+<article class="location">
+<a href="https://www.google.com/maps/search/?api=1&query=Plot+12+Mungwi+Road+Town+Kasama+Northern+Province+Zambia">
+Kulimaguide Services<br>
+Plot 12 Mungwi Road, Town Center<br>
+Kasama, Northern Province, Zambia
+</a>
+</article>
+
+<article class="Partner">
+<a href="https://uagzambia.com">United Afrrica Grain Ltd(UAG)</a>
+<a href="https://Farmdepot.co.zm">Farm Depot</a>
+<a href="https://championagrow.co.zm">Champion Agro World</a>
+<a href="https://farmesoutgrower.com">Farmers' Out Grower Foundation(FOF)</a>
+</article>
+
+<hr><hr><hr>
+<p class="Disclaimer"><strong>Disclaimer:</strong> We do not process payments or hold goods. We only connect you.</p>
+<p class="rights">&copy; 2026 Kulimaguide Services. All Rights reserved.</p>
+</footer>
+
 </body>
 </html>
