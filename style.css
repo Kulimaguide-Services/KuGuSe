@@ -965,7 +965,7 @@ display: block;
     /* Aside */
 
     .aside {
-        display: grid;
+        display: flex;
         flex-direction: column;
     }
 

@@ -17,8 +17,11 @@
      <!--It will consist of the logo and the navigation links-->
     
     <header>
-      <img class="logo" src="images\logo.png" width="200" height="200"><!--For the logo-->
-        <nav class="nav_links"><!--For the navigation links-->
+        <!--For the logo-->
+      <img class="logo" src="images\logo.png" width="200" height="200">
+
+       <!--For the navigation links-->
+      <nav class="nav_links">
             <ul>
               <li> <a href="index.html">Home</a></li>
               <li> <a href="buyer.html">Find Buyer</a> </li>
@@ -39,6 +42,7 @@
            <h3>
                 FIND RELIABLE TRANSPORTERS FOR YOUR HARVEST
             </h3> 
+
         <select name="fromFilter" class="filter">
             <option value="From">From</option>
             <option value="Kasama">Kasama</option>
@@ -62,6 +66,7 @@
             <option value="Monze">Monze</option>
             <option value="Mazabuka">Mazabuka</option>
          </select>&nbsp;&nbsp;
+
          <select name="ToFilter" class="filter">
           <option value="To">To</option>
             <option value="Kasama">Kasama</option>
@@ -85,6 +90,7 @@
             <option value="Monze">Monze</option>
             <option value="Mazabuka">Mazabuka</option>
          </select>&nbsp;&nbsp;
+
          <select name="VehicleFilter" class="filter">
             <option value="Vehicle">Vehicle Type</option>
             <option value="Motorbike">Motorbike</option>
@@ -97,6 +103,7 @@
             <option value="Truck">Truck</option>
             <option value="TATA">TATA</option>
          </select>&nbsp;&nbsp;
+
          <select name="CapacityFilter" class="filter">
             <option value="capacity">Vehicle capacity</option>
             <option value="1 tonne">1 tonne</option>
@@ -119,11 +126,16 @@
             <option value="18 tonnes">18 tonnes</option>
             <option value="19 tonnes">19 tonnes</option>
             <option value="20 tonnes">20 to 30 tonnes</option>
+
         </select>
         <br><br>
+
+        <label for="datefilter">Date:</label>
         <input class="filter" type="date" name="date filter" id="date "> &nbsp;&nbsp;
+
         <label class="filter" for="Price">Price</label> 
-        <input class="filter"  type="number" name="price filter" id="price" placeholder="ZMW"><br><br>
+        <input class="filter"  type="number" name="price filter" id="price" placeholder="ZMW" min="0"><br><br>
+
         <input class="filter" type="search" name="search filter" id="search" placeholder="search">
       <button class="filter" >submit</button>
         </section>
@@ -136,8 +148,8 @@
         </article> -->
         
         <section class="transporters_list">
+
             <article class="firstTransporter">
-            
                 <ul>
                     <h3>1</h3>
                   <li><b>Transporter's name:</b> J. Banda Transport</li>
@@ -150,6 +162,7 @@
                   <li><b>Phone/WhatsApp:</b> 0971234567 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
                 </ul>  
             </article>
+
             <article class="secondTransporter">
                  <ul>
                     <h3>2</h3>
@@ -163,6 +176,7 @@
                   <li><b>Phone/WhatsApp:</b> +260 967783344 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
                 </ul>  
             </article>
+
             <article class="thirdTransporter">
                  <ul>
                     <h3>3</h3>
@@ -176,6 +190,7 @@
                   <li><b>Phone/WhatsApp:</b> +26075552211 &nbsp; &nbsp; &nbsp;  <button>verified</button></li>
                 </ul>  
             </article>
+
             <article class=" fourthTransporter">
                 <ul>
                     <h3>4</h3>
@@ -190,7 +205,9 @@
                 </ul>  
             </article>
         </section>
+
         <aside class="aside">
+
             <article class="notes">
                 <h3>IMPORTANT NOTICE</h3><br>
                 <p>
@@ -204,6 +221,7 @@
                     <li><a href="tips.html">Soil Type Matcher</a></li>
                 </ul>
             </article>
+            
             <article class="howitworks">
                 <ul>
                     <li><b>HOW IT WORKS</b></li><br>
