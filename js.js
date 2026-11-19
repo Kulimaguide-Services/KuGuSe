@@ -315,71 +315,55 @@ document.addEventListener("DOMContentLoaded", () => {
         registrationMessage.classList.toggle("error", isError);
     }
 
-    registrationForm.addEventListener("submit", (event) => {
-        event.preventDefault();
+   registrationForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-        const transporter = {
-            id: `registered-${Date.now()}`,
-            name: document.querySelector("#regName").value.trim(),
-            location: document.querySelector("#regLocation").value.trim(),
-            from: document.querySelector("#regFrom").value.trim(),
-            to: document.querySelector("#regTo").value.trim(),
-            vehicle: document.querySelector("#regVehicle").value,
-            capacity: Number(document.querySelector("#regCapacity").value),
-            price: Number(document.querySelector("#regPrice").value),
-            phone: document.querySelector("#regPhone").value.trim(),
-            availableFrom: document.querySelector("#regAvailableFrom").value,
-            availableUntil: document.querySelector("#regAvailableUntil").value,
-            source: "registered",
-            verified: false
-        };
+    const transporter = {
+        name: document.querySelector("#regName").value.trim(),
+        location: document.querySelector("#regLocation").value.trim(),
+        from: document.querySelector("#regFrom").value.trim(),
+        to: document.querySelector("#regTo").value.trim(),
+        vehicle: document.querySelector("#regVehicle").value,
+        capacity: Number(document.querySelector("#regCapacity").value),
+        price: Number(document.querySelector("#regPrice").value),
+        phone: document.querySelector("#regPhone").value.trim(),
+        availableFrom: document.querySelector("#regAvailableFrom").value,
+        availableUntil: document.querySelector("#regAvailableUntil").value
+    };
 
-        if (!transporter.name || !transporter.location ||
-            !transporter.from || !transporter.to || !transporter.vehicle ||
-            !transporter.phone) {
-            showRegistrationMessage("Please complete all required fields.", true);
-            return;
-        }
+    try {
+        showRegistrationMessage("Submitting registration...");
 
-        if (!Number.isFinite(transporter.capacity) || transporter.capacity <= 0) {
-            showRegistrationMessage("Enter a valid vehicle capacity greater than zero.", true);
-            return;
-        }
+        const response = await fetch("api.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(transporter)
+        });
 
-        if (!Number.isFinite(transporter.price) || transporter.price < 0) {
-            showRegistrationMessage("Enter a valid price per kilometre.", true);
-            return;
-        }
+        const result = await response.json();
 
-        if (transporter.availableUntil < transporter.availableFrom) {
-            showRegistrationMessage(
-                "The availability end date cannot be earlier than the start date.",
-                true
-            );
-            return;
-        }
-
-        const registered = getRegisteredTransporters();
-        registered.push(transporter);
-
-        if (!saveRegisteredTransporters(registered)) {
-            showRegistrationMessage(
-                "The registration could not be saved. Check browser storage settings.",
-                true
-            );
-            return;
+        if (!response.ok || !result.success) {
+            throw new Error(result.message || "Registration failed.");
         }
 
         registrationForm.reset();
-        showRegistrationMessage(
-            "Registration saved in this browser. It is marked pending verification."
-        );
-        renderTransporters();
-    });
 
-    registrationForm.addEventListener("reset", () => {
-        showRegistrationMessage("");
-    });
+        showRegistrationMessage(
+            "Registration submitted successfully! Awaiting verification."
+        );
+
+    } catch (error) {
+        console.error("Registration error:", error);
+
+        showRegistrationMessage(
+            error.message || "Unable to submit registration.",
+            true
+        );
+    }
+});
+
 
     // Prevent selecting past dates for new availability dates and search date.
     const today = new Date();
