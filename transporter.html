@@ -30,7 +30,146 @@
      </header>
 
     <main>
+        <main class="transporter-main">
 
+  <!-- SECTION 2 - TITLE + FILTERS -->
+  <section class="transporter-header">
+    <h1 class="transporter-title">FIND RELIABLE TRANSPORTERS FOR YOUR HARVEST</h1>
+    <p class="filters-label">FILTERS</p>
+
+    <form class="transporter-filter-bar">
+      <div class="filter-field">
+        <label class="filter-label">From Location</label>
+        <input type="text" class="filter-input from-input" placeholder="e.g. Kasama">
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">To Location</label>
+        <input type="text" class="filter-input to-input" placeholder="e.g. Ndola">
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Vehicle Type</label>
+        <select class="filter-select vehicle-select">
+          <option value="all">All</option>
+          <option value="truck">Truck</option>
+          <option value="pickup">Pickup</option>
+          <option value="oxcart">Oxcart</option>
+          <option value="tractor-trailer">Tractor Trailer</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Capacity [tons]</label>
+        <input type="number" class="filter-input capacity-input" placeholder="e.g. 10">
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Date Needed</label>
+        <input type="date" class="filter-input date-input">
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Price per km range</label>
+        <input type="text" class="filter-input price-input" placeholder="e.g. 1-10 ZMW">
+      </div>
+
+      <button type="submit" class="search-btn">Search</button>
+    </form>
+  </section>
+
+  <!-- LISTINGS + ASIDE -->
+  <section class="transporter-layout">
+
+    <!-- TRANSPORTER LISTINGS -->
+    <div class="listings-wrap">
+      <h2 class="listings-title">TRANSPORTER LISTINGS</h2>
+
+      <div class="transporter-grid">
+
+        <!-- CARD 1 -->
+        <article class="transporter-card" data-from="Kasama" data-to="Ndola" data-vehicle="truck" data-capacity="10" data-price="5" data-availability="available">
+          <h3 class="transporter-name">Transporter Name: J. Banda Transport</h3>
+          <p class="transporter-detail"><span>Location:</span> Kasama, Northern Province</p>
+          <p class="transporter-detail"><span>Vehicle Type:</span> Truck</p>
+          <p class="transporter-detail"><span>Capacity:</span> 10 Tons</p>
+          <p class="transporter-detail"><span>Route:</span> Kasama → Ndola</p>
+          <p class="transporter-detail"><span>Price per km:</span> 5 ZMW</p>
+          <p class="transporter-detail"><span>Availability:</span> Available</p>
+          <p class="transporter-detail"><span>Phone/WhatsApp:</span> +260 97 123 4567</p>
+          <span class="verified-badge">✓ Verified</span>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="transporter-card" data-from="Mansa" data-to="Kasama" data-vehicle="tractor-trailer" data-capacity="15" data-price="6" data-availability="available">
+          <h3 class="transporter-name">Transporter Name: Mansa Haulers</h3>
+          <p class="transporter-detail"><span>Location:</span> Mansa, Luapula Province</p>
+          <p class="transporter-detail"><span>Vehicle Type:</span> Tractor Trailer</p>
+          <p class="transporter-detail"><span>Capacity:</span> 15 Tons</p>
+          <p class="transporter-detail"><span>Route:</span> Mansa → Kasama</p>
+          <p class="transporter-detail"><span>Price per km:</span> 6 ZMW</p>
+          <p class="transporter-detail"><span>Availability:</span> Available</p>
+          <p class="transporter-detail"><span>Phone/WhatsApp:</span> +260 97 555 2211</p>
+          <span class="verified-badge">✓ Verified</span>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="transporter-card" data-from="Mpika" data-to="Kasama" data-vehicle="pickup" data-capacity="3" data-price="4" data-availability="available">
+          <h3 class="transporter-name">Transporter Name: Northern Logistics</h3>
+          <p class="transporter-detail"><span>Location:</span> Mpika, Muchinga Province</p>
+          <p class="transporter-detail"><span>Vehicle Type:</span> Pickup</p>
+          <p class="transporter-detail"><span>Capacity:</span> 3 Tons</p>
+          <p class="transporter-detail"><span>Route:</span> Mpika → Kasama</p>
+          <p class="transporter-detail"><span>Price per km:</span> 4 ZMW</p>
+          <p class="transporter-detail"><span>Availability:</span> Available</p>
+          <p class="transporter-detail"><span>Phone/WhatsApp:</span> +260 96 778 3344</p>
+          <span class="verified-badge">✓ Verified</span>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="transporter-card" data-from="Kitwe" data-to="Ndola" data-vehicle="oxcart" data-capacity="2" data-price="3" data-availability="available">
+          <h3 class="transporter-name">Transporter Name: AgroMove Services</h3>
+          <p class="transporter-detail"><span>Location:</span> Kitwe, Copperbelt Province</p>
+          <p class="transporter-detail"><span>Vehicle Type:</span> Oxcart</p>
+          <p class="transporter-detail"><span>Capacity:</span> 2 Tons</p>
+          <p class="transporter-detail"><span>Route:</span> Kitwe → Ndola</p>
+          <p class="transporter-detail"><span>Price per km:</span> 3 ZMW</p>
+          <p class="transporter-detail"><span>Availability:</span> Available</p>
+          <p class="transporter-detail"><span>Phone/WhatsApp:</span> +260 95 334 9988</p>
+          <span class="verified-badge">✓ Verified</span>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ASIDE -->
+    <aside class="transporter-sidebar">
+      <div class="sidebar-box important-notes">
+        <h3 class="sidebar-title">IMPORTANT NOTES</h3>
+        <p class="sidebar-text">We only connect, we do not sell, buy or transport any goods!</p>
+      </div>
+
+      <div class="sidebar-box quick-tools">
+        <h3 class="sidebar-title">QUICK TOOLS</h3>
+        <ul class="tools-list">
+          <li class="tool-item">Weather-Based Planting Guide</li>
+          <li class="tool-item">Soil Type Matcher</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box how-it-works">
+        <h3 class="sidebar-title">HOW IT WORKS</h3>
+        <ul class="how-list">
+          <li class="how-item"><strong>Search</strong><br>Find transporters using filters</li>
+          <li class="how-item"><strong>Contact</strong><br>Reach via Phone/WhatsApp</li>
+          <li class="how-item"><strong>Negotiate</strong><br>Agree on price & schedule</li>
+        </ul>
+      </div>
+    </aside>
+
+  </section>
+
+</main>
     </main>
    
 
