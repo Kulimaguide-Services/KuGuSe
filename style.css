@@ -392,3 +392,399 @@ main {
     gap: 25px;
     border: none;
 }
+
+/* =========================================
+   KULIMAGUIDE - TRANSPORTER PAGE
+   Page-specific styling
+   Does not interfere with other pages
+========================================= */
+
+/* MAIN CONTAINER */
+.transporter-main {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 22px;
+    align-items: start;
+    background: #f3f5f1;
+    color: #1a2e1a;
+    border: none;
+}
+
+/* =========================================
+   SECTION 1 - TITLE AND FILTERS
+========================================= */
+
+.transporter-main .transporter-header {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    padding: 25px 25px 20px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.transporter-main .transporter-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #143312;
+    line-height: 1.2;
+    max-width: 100%;
+    margin: 0 auto 15px;
+    text-shadow: none;
+}
+
+.transporter-main .filters-label {
+    font-size: 14px;
+    font-weight: 800;
+    color: #2d5a27;
+    margin-bottom: 12px;
+}
+
+/* FILTER FORM */
+
+.transporter-main .transporter-filter-bar {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    align-items: end;
+    text-align: left;
+}
+
+.transporter-main .filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+/* Arrange filters in two rows */
+
+.transporter-main .filter-field:nth-child(1),
+.transporter-main .filter-field:nth-child(2),
+.transporter-main .filter-field:nth-child(3) {
+    grid-row: 1;
+}
+
+.transporter-main .filter-field:nth-child(4),
+.transporter-main .filter-field:nth-child(5),
+.transporter-main .filter-field:nth-child(6) {
+    grid-row: 2;
+}
+
+.transporter-main .filter-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #294729;
+}
+
+.transporter-main .filter-input,
+.transporter-main .filter-select {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    padding: 9px 10px;
+    border: 1px solid #d4ded1;
+    border-radius: 8px;
+    background: #f9faf8;
+    color: #263b26;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+}
+
+.transporter-main .filter-input:focus,
+.transporter-main .filter-select:focus {
+    border-color: #298804;
+    box-shadow: 0 0 0 2px rgba(41,136,4,0.10);
+}
+
+/* SEARCH BUTTON */
+
+.transporter-main .search-btn {
+    grid-column: 4;
+    grid-row: 2;
+    height: 42px;
+    padding: 10px 20px;
+    background: #298804;
+    color: #ffffff;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.transporter-main .search-btn:hover {
+    background: #144203;
+}
+
+/* =========================================
+   SECTION 2 - TRANSPORTER LISTINGS
+========================================= */
+
+.transporter-main .transporter-layout {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 22px;
+    align-items: start;
+    width: 100%;
+}
+
+.transporter-main .listings-wrap {
+    min-width: 0;
+}
+
+.transporter-main .listings-title {
+    font-size: 19px;
+    font-weight: 900;
+    color: #143312;
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+/* TWO-COLUMN LISTINGS */
+
+.transporter-main .transporter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+/* INDIVIDUAL TRANSPORTER CARDS */
+
+.transporter-main .transporter-card {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    border: none;
+    min-width: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transporter-main .transporter-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+}
+
+.transporter-main .transporter-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #143312;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.transporter-main .transporter-detail {
+    font-size: 12px;
+    color: #505c50;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.transporter-main .transporter-detail span {
+    color: #263f26;
+    font-weight: 700;
+}
+
+/* VERIFIED BADGE */
+
+.transporter-main .verified-badge {
+    display: inline-block;
+    margin-top: 9px;
+    padding: 5px 10px;
+    background: #e4f4df;
+    color: #237016;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* =========================================
+   SECTION 3 - RIGHT SIDEBAR
+========================================= */
+
+.transporter-main .transporter-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 0;
+}
+
+.transporter-main .sidebar-box {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    border: none;
+}
+
+.transporter-main .sidebar-title {
+    font-size: 14px;
+    font-weight: 900;
+    color: #143312;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.transporter-main .sidebar-text {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #505c50;
+    text-align: center;
+}
+
+/* QUICK TOOLS */
+
+.transporter-main .tools-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transporter-main .tool-item {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #505c50;
+}
+
+.transporter-main .tool-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #7ac16a;
+    font-weight: 900;
+}
+
+/* HOW IT WORKS */
+
+.transporter-main .how-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transporter-main .how-item {
+    position: relative;
+    padding-left: 17px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #505c50;
+}
+
+.transporter-main .how-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #7ac16a;
+    font-weight: 900;
+}
+
+.transporter-main .how-item strong {
+    color: #143312;
+    font-size: 12px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .transporter-main {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .transporter-main .transporter-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .transporter-main .transporter-sidebar {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 650px) {
+
+    .transporter-main {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .transporter-main .transporter-header {
+        padding: 18px 12px;
+    }
+
+    .transporter-main .transporter-title {
+        font-size: 22px;
+    }
+
+    .transporter-main .transporter-filter-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .transporter-main .filter-field:nth-child(n) {
+        grid-row: auto;
+    }
+
+    .transporter-main .search-btn {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .transporter-main .transporter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .transporter-main .transporter-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .transporter-main .transporter-title {
+        line-height: 1.3;
+    }
+}
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 380px) {
+
+    .transporter-main {
+        padding: 10px;
+    }
+
+    .transporter-main .transporter-title {
+        font-size: 19px;
+    }
+
+    .transporter-main .filter-input,
+    .transporter-main .filter-select {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .transporter-main .transporter-card {
+        padding: 13px;
+    }
+}
