@@ -6,120 +6,65 @@
     <meta name="author" content=""><!--Name of the maker of this webpage-->
     <meta name="description" content="Kulimaguide services only connect you buyers,sellers and transporters without processing any form of payment">
     <meta name="keywords" content="Farming,Kulima,guide,Farm">
-    <title>Kulimaguide Services | Connect to Buyers, Sellers and Transporters</title>
-    <link rel="stylesheet" href="">
+    <title>Find Buyer | Kulimaguide Services </title>
+    <link rel="stylesheet" href="style.css">
     <link rel="javascript" href="">
 </head>
 
-<body>
-    <!-- Header section with navigation inside -->
-     <!--This part of the webpage will remain the same for all pages-->
-     <!--It will consist of the logo and the navigation links-->
-        <header>
-            <!--For the logo-->
-      <img src="/ desktop/images/KGSL.png" width="200" height="200">
-         <!--For the navigation links-->
-        <nav>
-            <ul>
-              <li> <a href="index.html">Home</a></li>
-              <li> <a href="buyer.html">Find Buyer</a> </li>
-              <li> <a href="supplier.html">Find Supplier</a> </li>
-              <li> <a href="transporter.html">Find Transporter</a> </li>
-              <li> <a href="contact.html">Contact</a></li>
-              <li> <a href="tips.html">Farming Tips</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="layout">
+        <!-- HEADER: Logo and Navigation -->
+     <header>
+       <img class="logo" src ="images\logo.png" alt="Kulimaguide Services Logo" width="200" height="200">
+       <!-- ========= NAV: Main Site Navigation ========= -->
+       <!-- This part will stay the same for all pages-->
+       <nav class="nav_links">
+         <ul>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="supplier.html">Find Supplier</a></li>
+           <li><a href="buyer.html">Find Buyer</a></li>
+           <li><a href="transporter.html">Find Transporter</a></li>
+           <li><a href="tips.html">Farming Tips</a></li>
+           <li><a href="contact.html">Contact</a></li>
+         </ul>
+       </nav>
+     </header>
     
     <!--The main content of the webpage-->
     <!--This part of the webpage will change depending on the webpage-->
     <main>
-
-           
-
-          
-        <!-- BUYER SEARCH SECTION-->
-        <section>
-            <h2>Find verified Buyers near you</h2>
-            <p>Connect with verified buyers for your agricultural products.filter by location,quality and price to find suitable buyers and negotiate directly...</p>
-            <form action="#" method="get">
-                <lable for="crop">crop type;</lable>
-                <select id="crop" name="crop">
-                    <option value="">select crop</option>
-                    <option value="Groundnuts">Groundnuts</option>
-                     <option value="Soya">Soya</option>
-                      <option value="White">White</option>
-                       <option value="Cassava">Cassava</option>
-                        <option value="Beans">Beans</option>
-                        </select> <br><br><br>
-                        <section>
-                        <lable for="location">location(District)</lable>
-                        <select id="location" name="location">
-                            <option value="">select distict</option>
-                            <option value="kasama">kasama</option>
-                            <option value="lusaka">lusska</option>
-                            <option value="mpika">mpika</option>
-                            <option value="Ndola">Ndola</option>
-                            <option value="mongu">mongu</option>
-                            </select>
-                            <br><br>
-                            <lable for="quantity">Quantity needed(tons)</lable>
-                            <input type="number" id="quantity" min="1" name="quantity" placeholder="enter quantity">
-                            <br><br>
-                            <lable for="price">price range (ZMW)</lable>
-                            <input type="number" id="price" name="price" min="0" placeholder="Maximum price">
-                            <br><br>
-                            <lable for="buyer-type">Buyer type</lable>
-                            <select id="buyer-type" name="buyer-type">
-                                <option value="">select buyer type</option>
-                                <option value="individual">lndividual</option>
-                                     <option value=" milling company"> milling company</option>
-                                          <option value exporter">exporter</option>
-                                               <option value="cooperative">cooperative</option>
-                            </select>
-                            <br><br>
-                            <buttom type="submit">search buyers</buttom>
-                            </form>
-                            </section>
-                            <!--SIDEBAR-->
-                            <aside>
-                                <h3>lmportant notice</h3>
-                                <p>We only connect farmers to buyers.We do not sell,buy or transport any goods</p>
-                                
-                            </aside>
-
-
-
+     
    
     </main>
 
-     <!--Footer of the webpage-->
-    <!--This part of the webpage will remain the same for all webpages-->
-    <footer>
-        <section class="handlers">
-            <article>
-                <!--For social medial handlers links-->
-                <a href="mailto:kabwegift084@gmail.com">Kulimaguide23@gmail.com</a><br>
-                <a href="https//:www.facebook/Kulimaguideservices">Kulimaguide Services</a><br>
-                <a href="https://www.wa.com/+260766254304"> 0766254304</a>
-            </article><br>
+   <!-- FOOTER: Matches wireframe -->
+      <footer class="foot">
+        <article class="Contact">
+          <a href="mailto:kabwegift084@gmail.com">Email: Kulimaguide01@gmail.com</a>
+          <a href="https://www.facebook.com/Kulimaguideservices">Facebook: Kulimaguideservices</a>
+          <a href="https://wa.me/260766254304">Whatsapp: +260 766 254 304</a>
+        </article>
 
-            <article>
-                <!--For location links-->
-                Kulimaguide Services<br>
-                Plot 12 Mungwi Road,Town Center<br>
-                Kasama,Northern Province,Zambia
-            </article><br>
+       <article class="location">
+        <a href="https://www.google.com/maps/search/?api=1&query=Plot+12+Mungwi+Road+Town+Kasama+Northern+Province+Zambia">
+        Kulimaguide Services<br>
+        Plot 12 Mungwi Road, Town Center<br>
+        Kasama, Northern Province, Zambia
+       </a>
+      </article>
 
-            <article>
-                <!--Partners-->
-                Zambia National Farmers Union(ZNFU)<br> 
-                Patents and Companies Registration Agency(PACRA)<br> 
-                Ministry of Agriculture
-            </article>
-        </section>
-    </footer>
+      <article class="Partner">
+         <a href="https://uagzambia.com">United Afrrica Grain Ltd(UAG)</a>
+         <a href="https://Farmdepot.co.zm">Farm Depot</a>
+         <a href="https://championagrow.co.zm">Champion Agro World</a>
+         <a href="https://farmesoutgrower.com">Farmers' Out Grower Foundation(FOF)</a>
+      </article>
 
-    <p>Disclaimer: We do not process payments or hold goods. We only connect you.<p><!--Disclaimer-->
-</body>
+    <hr><hr><hr>
+     <p class="Disclaimer"><strong>Disclaimer:</strong> We do not process payments or hold goods. We only connect you.</p>
+    <p class="rights">&copy; 2026 Kulimaguide Services. All Rights reserved.</p>
+   </footer>
+
+
+   </body>
 </html>
+    
