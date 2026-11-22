@@ -1,0 +1,127 @@
+<?php include 'db.php';?>
+ <!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Go company">
+    <meta name="keywords" content="GO, Kulima, Farm, Kulimaguide, Farming">
+    <title>Home | Kulimaguide Services | Connect Farmers, Suppliers, Buyers & Transporters</title>
+    <meta name="description" content="Kulimaguide Services connects farmers to trusted suppliers, buyers, and reliable transporters. Plus free farming tips for different crops, soils, and weather.">
+    <link rel="stylesheet" href="style.css">
+   
+
+  </head>
+  
+  <body class="layout">
+
+     <!-- HEADER: Logo and Navigation -->
+     <header>
+       <img class="logo" src ="images\logo.png" alt="Kulimaguide Services Logo" width="200" height="200">
+       <!-- ========= NAV: Main Site Navigation ========= -->
+       <!-- This part will stay the same for all pages-->
+       <nav class="nav_links">
+         <ul>
+           <li><a href="index.html">Home</a></li>
+           <li><a href="supplier.html">Find Supplier</a></li>
+           <li><a href="buyer.html">Find Buyer</a></li>
+           <li><a href="transporter.html">Find Transporter</a></li>
+           <li><a href="tips.html">Farming Tips</a></li>
+           <li><a href="contact.html">Contact</a></li>
+         </ul>
+       </nav>
+     </header>
+
+     <main>
+      <!-- SECTION 1: Hero - matches wireframe -->
+        <section class="mainpicture">
+          <h1>GROW MORE. SELL SMART. SPEND LESS.</h1>
+            <h3>Our Purpose</h3>
+            <p>Kulimaguide Services does not handle payments. We connect you directly to trusted suppliers, 
+            verified buyers, and reliable transporters. You deal directly with them.</p>
+            <p>We also provide free farming tips tailored to different crops, soil types,
+            and weather conditions.</p>
+
+            <!-- WIREFRAME ORDER: SELLER first, then BUYER -->
+            <a href="supplier.html" class="hero-btn">SELLER</a>
+            <a href="buyer.html" class="hero-btn">BUYER</a>
+        </section>
+
+      <!-- SECTION 2: 4 simple boxes - matches wireframe -->
+        <section class="cards">
+          <article class="grid">
+          <h3>Browse <br>Suppliers</h3>
+           <p>Find verified seed, fertilizer, and equipment suppliers in your area.</p>
+           <img src="images/IMG-20261106-WA6958.jpg" alt="Farmer buying seed and fertilizer" class="card-img">
+           <a href="supplier.html">Browse Suppliers</a>
+         </article>
+
+         <article class="grid">
+          <h3>Browse <br>Buyers</h3>
+           <p>Connect with buyers looking for your maize, soya, vegetables and more.</p>
+           <img src="images/IMG-20261106-WA4152.jpg" alt="Bags of soya ready for buyers" class="card-img">
+           <a href="buyer.html">Browse Buyers</a>
+         </article>
+
+        <article class="grid">
+          <h3>Browse Transporters</h3>
+          <p>Book transporters to move your produce from farm to market safely or home.</p>
+          <img src="images/IMG-20261106-WA8330.jpg" alt="Truck transporting farm produce" class="card-img">
+          <a href="transporter.html">Browse Transporters</a>
+        </article>
+
+        <article class="grid">
+          <h3>Get <br>Farming Tips</h3>
+          <p>Get the latest Farming tips for your maize, soyabeans and others.</p>
+          <img src="images/IMG-20261106-WA2945.jpg" alt="Farmer checking maize crop" class="card-img">
+          <a href="tips.html">Get <br> Farming Tips</a>
+        </article>
+    </section>
+
+      <!-- ASIDE: Right sidebar - matches wireframe -->
+      <aside class="ASIDE">
+        <div class="aside-card">
+         <h3>IMPORTANT NOTES</h3>
+         <p>We only connect, we do not sell, buy or transport any goods!</p>
+       </div>
+
+       <div class="aside-card">
+        <h3>QUICK TOOLS</h3>
+          <ul>
+            <li><a href="tips.html#weather">Weather-Based Planting Guide</a></li>
+            <li><a href="tips.html#soil">Soil Type Matcher</a></li>
+         </ul>
+       </div>
+     </aside>
+  </main>
+
+      <!-- FOOTER: Matches wireframe -->
+      <footer class="foot">
+        <article class="Contact">
+          <a href="mailto:kabwegift084@gmail.com">Email: Kulimaguide01@gmail.com</a>
+          <a href="https://www.facebook.com/Kulimaguideservices">Facebook: Kulimaguideservices</a>
+          <a href="https://wa.me/260766254304">Whatsapp: +260 766 254 304</a>
+        </article>
+
+       <article class="location">
+        <a href="https://www.google.com/maps/search/?api=1&query=Plot+12+Mungwi+Road+Town+Kasama+Northern+Province+Zambia">
+        Kulimaguide Services<br>
+        Plot 12 Mungwi Road, Town Center<br>
+        Kasama, Northern Province, Zambia
+       </a>
+      </article>
+
+      <article class="Partner">
+         <a href="https://uagzambia.com">United Afrrica Grain Ltd(UAG)</a>
+         <a href="https://Farmdepot.co.zm">Farm Depot</a>
+         <a href="https://championagrow.co.zm">Champion Agro World</a>
+         <a href="https://farmesoutgrower.com">Farmers' Out Grower Foundation(FOF)</a>
+      </article>
+
+    <hr><hr><hr>
+     <p class="Disclaimer"><strong>Disclaimer:</strong> We do not process payments or hold goods. We only connect you.</p>
+    <p class="rights">&copy; 2026 Kulimaguide Services. All Rights reserved.</p>
+   </footer>
+
+   </body>
+</html>
