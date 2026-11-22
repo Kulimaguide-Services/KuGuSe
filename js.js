@@ -184,3 +184,179 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+// ============================================
+// KULIMAGUIDE - FARMING TIPS PAGE
+// Category Filtering and Search
+// ============================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Select the Tips page only
+    const tipsMain = document.querySelector(".tips-main");
+
+    if (!tipsMain) {
+        return;
+    }
+
+    // Select category buttons
+    const filterButtons = tipsMain.querySelectorAll(".filter-btn");
+
+    // Select search elements
+    const searchInput = tipsMain.querySelector(".search-input");
+    const searchButton = tipsMain.querySelector(".search-btn");
+
+    // Select tips cards and grid
+    const tipCards = tipsMain.querySelectorAll(".tip-card");
+    const tipsGrid = tipsMain.querySelector(".tips-grid");
+    const listingsTitle = tipsMain.querySelector(".listings-title");
+
+    // Store the original heading
+    const originalHeading = "TIPS LISTINGS";
+
+    // Store the currently selected category
+    let selectedCategory = "all";
+
+    // Create a message for when no tips are found
+    const noResults = document.createElement("p");
+
+    noResults.className = "no-results";
+    noResults.textContent = "No farming tips found. Try another category or search.";
+    noResults.style.display = "none";
+    noResults.style.textAlign = "center";
+    noResults.style.padding = "20px";
+    noResults.style.color = "#555";
+
+    tipsGrid.appendChild(noResults);
+
+
+    // ========================================
+    // FUNCTION TO FILTER FARMING TIPS
+    // ========================================
+
+    function filterTips() {
+
+        const searchText = searchInput.value.toLowerCase().trim();
+
+        let visibleCount = 0;
+
+        tipCards.forEach(function (card) {
+
+            // Get the category of each tip
+            const cardCategory = card.dataset.category;
+
+            // Get the text inside each tip card
+            const cardText = card.textContent.toLowerCase();
+
+            // Check selected category
+            const matchesCategory =
+                selectedCategory === "all" ||
+                cardCategory === selectedCategory;
+
+            // Check search text
+            const matchesSearch =
+                cardText.includes(searchText);
+
+            // Display or hide the card
+            if (matchesCategory && matchesSearch) {
+
+                card.style.display = "flex";
+                visibleCount++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        // Display the number of matching tips
+        if (visibleCount === 0) {
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+        // Update the listings heading
+        if (listingsTitle) {
+
+            if (searchText !== "" || selectedCategory !== "all") {
+
+                listingsTitle.textContent =
+                    "TIPS LISTINGS (" + visibleCount + ")";
+
+            } else {
+
+                listingsTitle.textContent = originalHeading;
+
+            }
+
+        }
+
+    }
+
+
+    // ========================================
+    // CATEGORY BUTTON EVENTS
+    // ========================================
+
+    filterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            // Get selected category
+            selectedCategory = button.dataset.filter;
+
+            // Remove active class from all buttons
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            // Highlight selected button
+            button.classList.add("active");
+
+            // Apply filtering
+            filterTips();
+
+        });
+
+    });
+
+
+    // ========================================
+    // SEARCH INPUT EVENT
+    // ========================================
+
+    searchInput.addEventListener("input", function () {
+
+        filterTips();
+
+    });
+
+
+    // ========================================
+    // SEARCH BUTTON EVENT
+    // ========================================
+
+    searchButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        filterTips();
+
+    });
+
+
+    // ========================================
+    // INITIAL DISPLAY
+    // ========================================
+
+    filterTips();
+
+});
