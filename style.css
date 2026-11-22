@@ -788,3 +788,451 @@ main {
         padding: 13px;
     }
 }
+
+/* ============================================
+   KULIMAGUIDE - FARMING TIPS PAGE
+   Page-specific CSS
+   All styling is restricted to .tips-main
+============================================ */
+
+/* ===== PAGE FOUNDATION ===== */
+
+.tips-main,
+.tips-main * {
+    box-sizing: border-box;
+}
+
+.tips-main {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 35px 30px;
+    display: block;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #1a2e1a;
+}
+
+/* ===== PAGE TITLE AND FILTERS ===== */
+
+.tips-main .tips-header {
+    width: 100%;
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+.tips-main .tips-title {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 25px;
+    color: #143312;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* ===== CATEGORY FILTER ===== */
+
+.tips-main .filter-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tips-main .filter-label {
+    color: #143312;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.tips-main .filter-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tips-main .filter-btn {
+    padding: 9px 17px;
+    background: #ffffff;
+    color: #2d5a27;
+    border: 1px solid #b9d4b2;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.tips-main .filter-btn:hover,
+.tips-main .filter-btn.active {
+    background: #298804;
+    color: #ffffff;
+    border-color: #298804;
+}
+
+/* ===== SEARCH BAR ===== */
+
+.tips-main .search-bar {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background: #f7faf6;
+    border: 1px solid #d5e2d1;
+    border-radius: 30px;
+    padding: 5px 12px;
+}
+
+.tips-main .search-icon {
+    width: 25px;
+    color: #2d5a27;
+}
+
+.tips-main .search-icon::before {
+    content: "⌕";
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.tips-main .search-input {
+    flex: 1;
+    min-width: 0;
+    padding: 11px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #1a2e1a;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.tips-main .search-btn {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #298804;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.tips-main .search-btn::before {
+    content: "⌕";
+}
+
+/* ===== FEATURED TIP AND SIDEBAR ===== */
+
+.tips-main .tips-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 22px;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+
+/* ===== FEATURED TIP ===== */
+
+.tips-main .featured-tip {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.tips-main .featured-label {
+    display: inline-block;
+    padding: 7px 13px;
+    margin-bottom: 18px;
+    background: #e8f5e3;
+    color: #2d5a27;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.tips-main .featured-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.tips-main .featured-text {
+    min-width: 0;
+}
+
+.tips-main .featured-title {
+    margin: 0 0 12px;
+    color: #143312;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.tips-main .featured-meta {
+    margin-bottom: 12px;
+    color: #63805d;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tips-main .featured-desc {
+    margin-bottom: 18px;
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.tips-main .featured-image {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #e8f5e3;
+    color: #2d5a27;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ===== READ MORE BUTTONS ===== */
+
+.tips-main .read-more-btn {
+    display: inline-block;
+    padding: 9px 19px;
+    background: #298804;
+    color: #ffffff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.tips-main .read-more-btn:hover {
+    background: #144203;
+}
+
+/* ===== SIDEBAR ===== */
+
+.tips-main .tips-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tips-main .sidebar-box {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.tips-main .sidebar-title {
+    margin-bottom: 15px;
+    color: #143312;
+    font-size: 15px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.tips-main .sidebar-text {
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.tips-main .tools-list {
+    padding-left: 18px;
+    color: #555555;
+}
+
+.tips-main .tool-item {
+    margin-bottom: 11px;
+    padding-left: 3px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.tips-main .tool-item::marker {
+    color: #298804;
+}
+
+/* ===== TIPS LISTINGS ===== */
+
+.tips-main .tips-listings {
+    width: 100%;
+    padding: 22px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.tips-main .listings-title {
+    margin-bottom: 22px;
+    color: #143312;
+    font-size: 21px;
+    font-weight: 900;
+    text-align: center;
+}
+
+/* ===== THREE TIP CARDS ===== */
+
+.tips-main .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.tips-main .tip-card {
+    min-width: 0;
+    padding: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #f8faf7;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.tips-main .tip-image {
+    width: 100%;
+    min-height: 130px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: #e8f5e3;
+    color: #2d5a27;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tips-main .tip-title {
+    margin-bottom: 10px;
+    color: #143312;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.tips-main .tip-meta {
+    margin-bottom: 10px;
+    color: #63805d;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.tips-main .tip-desc {
+    margin-bottom: 16px;
+    color: #555555;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.tips-main .tip-card .read-more-btn {
+    margin-top: auto;
+}
+
+/* ===== TABLET RESPONSIVENESS ===== */
+
+@media (max-width: 900px) {
+
+    .tips-main {
+        padding: 25px 20px;
+    }
+
+    .tips-main .tips-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-main .tips-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tips-main .tips-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tips-main .tips-title {
+        font-size: 28px;
+    }
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 600px) {
+
+    .tips-main {
+        padding: 18px 12px;
+    }
+
+    .tips-main .tips-header {
+        padding: 20px 12px;
+    }
+
+    .tips-main .tips-title {
+        font-size: 23px;
+    }
+
+    .tips-main .filter-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .tips-main .filter-buttons {
+        gap: 8px;
+    }
+
+    .tips-main .filter-btn {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .tips-main .featured-content {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-main .featured-title {
+        font-size: 20px;
+    }
+
+    .tips-main .featured-image {
+        min-height: 150px;
+    }
+
+    .tips-main .tips-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-main .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-main .tips-listings {
+        padding: 15px;
+    }
+
+    .tips-main .tip-card {
+        padding: 15px;
+    }
+}
