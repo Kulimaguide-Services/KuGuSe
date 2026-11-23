@@ -409,3 +409,94 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initial page display.
     renderTransporters();
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Scope strictly to .supplier-main so it never runs or causes errors on other pages
+  const supplierMain = document.querySelector(".supplier-main");
+  if (!supplierMain) return;
+
+  const filterForm = supplierMain.querySelector(".filter-bar");
+  const inputTypeSelect = supplierMain.querySelector("#input-type");
+  const brandInput = supplierMain.querySelector("#brand");
+  const locationInput = supplierMain.querySelector("#location");
+  const priceInput = supplierMain.querySelector("#price");
+  const inStockSelect = supplierMain.querySelector("#in-stock");
+  const supplierGrid = supplierMain.querySelector(".supplier-grid");
+  const supplierCards = Array.from(supplierMain.querySelectorAll(".supplier-card"));
+
+  if (!filterForm || !supplierGrid || supplierCards.length === 0) return;
+
+  // Create a scoped empty-state message element inside .supplier-grid
+  const emptyMessage = document.createElement("p");
+  emptyMessage.className = "no-results-msg";
+  emptyMessage.textContent = "No suppliers match your search filters. Try adjusting your criteria.";
+  emptyMessage.style.display = "none";
+  supplierGrid.appendChild(emptyMessage);
+
+  // Helper to extract field text from a card's <li> items
+  function getCardDetail(card, labelPrefix) {
+    const items = card.querySelectorAll(".supplier-details li");
+    for (const item of items) {
+      const text = item.textContent.trim();
+      if (text.toLowerCase().startsWith(labelPrefix.toLowerCase())) {
+        return text.slice(labelPrefix.length).trim();
+      }
+    }
+    return "";
+  }
+
+  function filterSuppliers(event) {
+    if (event) event.preventDefault();
+
+    const selectedType = inputTypeSelect.value.trim().toLowerCase();
+    const brandQuery = brandInput.value.trim().toLowerCase();
+    const locationQuery = locationInput.value.trim().toLowerCase();
+    const maxPrice = parseFloat(priceInput.value.trim());
+    const stockPreference = inStockSelect.value.trim().toLowerCase();
+
+    let visibleCount = 0;
+
+    supplierCards.forEach((card) => {
+      const cardType = getCardDetail(card, "Input Type:").toLowerCase();
+      const cardBrand = getCardDetail(card, "Brand:").toLowerCase();
+      const cardLocation = getCardDetail(card, "Location:").toLowerCase();
+      const cardPriceText = getCardDetail(card, "Price:");
+      const cardStockText = getCardDetail(card, "Stock:");
+
+      // Extract numeric values from strings like "450 ZMW per 10kg" and "100 bags"
+      const priceMatch = cardPriceText.match(/[\d.]+/);
+      const cardPrice = priceMatch ? parseFloat(priceMatch[0]) : 0;
+
+      const stockMatch = cardStockText.match(/\d+/);
+      const cardStockQty = stockMatch ? parseInt(stockMatch[0], 10) : 0;
+
+      // Check each filter condition
+      const matchesType = !selectedType || cardType.includes(selectedType);
+      const matchesBrand = !brandQuery || cardBrand.includes(brandQuery);
+      const matchesLocation = !locationQuery || cardLocation.includes(locationQuery);
+      const matchesPrice = isNaN(maxPrice) || cardPrice <= maxPrice;
+      const matchesStock =
+        stockPreference === "yes" ? cardStockQty > 0 : cardStockQty === 0;
+
+      if (matchesType && matchesBrand && matchesLocation && matchesPrice && matchesStock) {
+        card.style.display = "";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Show or hide the empty-state message
+    emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
+  }
+
+  // Filter on Search button submit AND live as the user types/changes selections
+  filterForm.addEventListener("submit", filterSuppliers);
+  inputTypeSelect.addEventListener("change", filterSuppliers);
+  inStockSelect.addEventListener("change", filterSuppliers);
+  brandInput.addEventListener("input", filterSuppliers);
+  locationInput.addEventListener("input", filterSuppliers);
+  priceInput.addEventListener("input", filterSuppliers);
+});

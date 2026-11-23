@@ -383,12 +383,495 @@ main h1 { font-size: 28px; }
 }
 
 
-main {
+
+
+
+/*
+=========================================================
+KULIMAGUIDE — SUPPLIER PAGE STYLES
+=========================================================
+Designed for the supplier HTML in suppliers(1).docx.
+
+IMPORTANT:
+- Every selector is scoped under .supplier-main.
+- This prevents these rules from changing buyer, seller,
+  transporter, home, contact, header, or footer pages.
+- The header and footer shown in the wireframe are outside
+  this supplied <main> element; keep their shared styles
+  in your main site stylesheet.
+- Supplier image placeholders are generated with ::before.
+  Replace them with <img class="supplier-image"> elements
+  when real supplier/product images are available.
+=========================================================
+*/
+
+/* ---------- SUPPLIER PAGE BASE ---------- */
+
+.supplier-main,
+.supplier-main * {
+    box-sizing: border-box;
+}
+
+.supplier-main {
+    --supplier-green: #1e5a27;
+    --supplier-green-dark: #143b1b;
+    --supplier-green-light: #e8f3e5;
+    --supplier-text: #263526;
+    --supplier-muted: #667166;
+    --supplier-border: #dce5d9;
+    --supplier-surface: #ffffff;
+    --supplier-background: #f3f6f1;
+
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 30px;
+    color: var(--supplier-text);
+    font-family: Inter, Arial, sans-serif;
+    background: var(--supplier-background);
+    line-height: 1.5;
+}
+
+/* ---------- SECTION 1: PAGE TITLE AND FILTERS ---------- */
+
+.supplier-main .supplier-header {
+    width: 100%;
+    margin: 0 0 26px;
+    padding: 28px 26px;
+    background: var(--supplier-surface);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(28, 63, 25, 0.06);
+}
+
+.supplier-main .supplier-title {
+    max-width: 100%;
+    margin: 0 0 24px;
+    color: var(--supplier-green-dark);
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+/* Filter bar */
+
+.supplier-main .supplier-filter-bar {
     display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 25px;
-    border: none;
+    grid-template-columns: repeat(5, minmax(120px, 1fr)) auto;
+    gap: 13px;
+    align-items: end;
+    width: 100%;
+    margin: 0;
+    padding: 18px;
+    background: #f7faf5;
+    border: 1px solid var(--supplier-border);
+    border-radius: 12px;
+}
+
+.supplier-main .filter-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 7px;
+}
+
+.supplier-main .filter-label {
+    display: block;
+    color: #314631;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.supplier-main .filter-input,
+.supplier-main .filter-select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding: 10px 11px;
+    color: #344334;
+    background: #fff;
+    border: 1px solid #cbd8c8;
+    border-radius: 7px;
+    outline: none;
+    font: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.supplier-main .filter-input::placeholder {
+    color: #899489;
+}
+
+.supplier-main .filter-input:focus,
+.supplier-main .filter-select:focus {
+    border-color: var(--supplier-green);
+    box-shadow: 0 0 0 3px rgba(30, 90, 39, 0.12);
+}
+
+.supplier-main .search-btn {
+    min-height: 42px;
+    padding: 10px 20px;
+    color: #fff;
+    background: var(--supplier-green);
+    border: 1px solid var(--supplier-green);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.supplier-main .search-btn:hover {
+    background: var(--supplier-green-dark);
+    transform: translateY(-1px);
+}
+
+.supplier-main .search-btn:focus-visible {
+    outline: 3px solid rgba(30, 90, 39, 0.25);
+    outline-offset: 3px;
+}
+
+/* ---------- SECTION 2: LISTINGS AND SIDEBAR ---------- */
+
+.supplier-main .supplier-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 285px;
+    gap: 24px;
+    align-items: start;
+    width: 100%;
+}
+
+.supplier-main .listings-wrap {
+    min-width: 0;
+    padding: 22px;
+    background: var(--supplier-surface);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(28, 63, 25, 0.06);
+}
+
+.supplier-main .listings-title {
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    color: var(--supplier-green-dark);
+    border-bottom: 2px solid #e6eee2;
+    font-size: 19px;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 0.4px;
+}
+
+/* Two supplier cards per row, as shown in the wireframe */
+
+.supplier-main .supplier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* ---------- SUPPLIER CARDS ---------- */
+
+.supplier-main .supplier-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 15px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--supplier-border);
+    border-radius: 11px;
+    box-shadow: 0 3px 12px rgba(27, 59, 24, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.supplier-main .supplier-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(27, 59, 24, 0.10);
+}
+
+/*
+Image placeholder:
+This creates a visual image area without requiring an image file
+or changing the existing HTML. It is contained inside each card.
+*/
+
+.supplier-main .supplier-card::before {
+    content: "SUPPLIER / PRODUCT IMAGE";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 112px;
+    margin: 0 0 13px;
+    color: #557451;
+    background:
+        linear-gradient(135deg, rgba(232, 243, 229, 0.95), rgba(213, 230, 207, 0.95));
+    border: 1px dashed #9db99a;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Use this class when you add a real image inside a supplier card. */
+.supplier-main .supplier-card .supplier-image {
+    display: block;
+    width: 100%;
+    height: 150px;
+    margin: 0 0 13px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+
+/* Hide the generated placeholder when a real image is present. */
+.supplier-main .supplier-card:has(.supplier-image)::before {
+    display: none;
+}
+
+.supplier-main .supplier-name {
+    margin: 0 0 10px;
+    color: var(--supplier-green-dark);
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+.supplier-main .supplier-detail {
+    margin: 4px 0;
+    color: #526052;
+    font-size: 12px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.supplier-main .supplier-detail span {
+    color: #293d29;
+    font-weight: 800;
+}
+
+/* Verified badge */
+
+.supplier-main .verified-badge {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 5px;
+    margin-top: 12px;
+    padding: 5px 9px;
+    color: #1e642b;
+    background: #e8f6e9;
+    border: 1px solid #b9dfbd;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* ---------- SUPPLIER SIDEBAR ---------- */
+
+.supplier-main .supplier-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+.supplier-main .sidebar-box {
+    padding: 19px;
+    background: var(--supplier-surface);
+    border: 1px solid #e3eae0;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(28, 63, 25, 0.06);
+}
+
+.supplier-main .sidebar-title {
+    margin: 0 0 12px;
+    padding-bottom: 9px;
+    color: var(--supplier-green-dark);
+    border-bottom: 1px solid #e6eee2;
+    font-size: 14px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.supplier-main .sidebar-text {
+    margin: 0;
+    color: #536153;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Quick tools list */
+
+.supplier-main .tools-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.supplier-main .tool-item {
+    position: relative;
+    margin: 9px 0 0;
+    padding: 0 0 0 17px;
+    color: #526052;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.supplier-main .tool-item::before {
+    content: "•";
+    position: absolute;
+    top: 0;
+    left: 3px;
+    color: #6ca65f;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+/* ---------- ACCESSIBILITY AND LONG CONTENT ---------- */
+
+.supplier-main button,
+.supplier-main input,
+.supplier-main select {
+    font-family: inherit;
+}
+
+.supplier-main button:focus-visible,
+.supplier-main a:focus-visible {
+    outline: 3px solid rgba(30, 90, 39, 0.3);
+    outline-offset: 3px;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 1050px) {
+    .supplier-main {
+        padding: 24px;
+    }
+
+    .supplier-main .supplier-filter-bar {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .supplier-main .search-btn {
+        grid-column: 1 / -1;
+    }
+
+    .supplier-main .supplier-layout {
+        grid-template-columns: minmax(0, 1fr) 250px;
+        gap: 18px;
+    }
+
+    .supplier-main .listings-wrap {
+        padding: 18px;
+    }
+}
+
+/* ---------- SMALL TABLET / LARGE PHONE ---------- */
+
+@media (max-width: 760px) {
+    .supplier-main {
+        padding: 18px;
+    }
+
+    .supplier-main .supplier-header {
+        padding: 22px 18px;
+    }
+
+    .supplier-main .supplier-filter-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .supplier-main .search-btn {
+        grid-column: 1 / -1;
+    }
+
+    .supplier-main .supplier-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .supplier-main .supplier-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 520px) {
+    .supplier-main {
+        padding: 12px;
+    }
+
+    .supplier-main .supplier-header {
+        margin-bottom: 16px;
+        padding: 20px 13px;
+    }
+
+    .supplier-main .supplier-title {
+        margin-bottom: 18px;
+        font-size: 23px;
+    }
+
+    .supplier-main .supplier-filter-bar {
+        grid-template-columns: 1fr;
+        gap: 11px;
+        padding: 13px;
+    }
+
+    .supplier-main .search-btn {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .supplier-main .listings-wrap {
+        padding: 14px;
+    }
+
+    .supplier-main .listings-title {
+        font-size: 17px;
+    }
+
+    .supplier-main .supplier-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .supplier-main .supplier-card {
+        padding: 13px;
+    }
+
+    .supplier-main .supplier-card::before {
+        height: 135px;
+    }
+
+    .supplier-main .supplier-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .supplier-main .sidebar-box {
+        padding: 17px;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .supplier-main *,
+    .supplier-main *::before,
+    .supplier-main *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
