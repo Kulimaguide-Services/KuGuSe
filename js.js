@@ -365,7 +365,6 @@ document.addEventListener("DOMContentLoaded", function () {
    KULIMAGUIDE - BUYERS PAGE
    Search and Filter Functionality
    Page-specific JavaScript
-========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -448,6 +447,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return "";
     }
 
+    });
 
     // =====================================
     // BUYER FILTER FUNCTION
