@@ -1561,3 +1561,456 @@ or changing the existing HTML. It is contained inside each card.
         padding: 15px;
     }
 }
+/* =========================================
+   KULIMAGUIDE - BUYERS PAGE
+   Page-specific CSS
+   Isolated from other pages
+========================================= */
+
+/* ===== MAIN CONTAINER ===== */
+
+.buyer-main {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 30px;
+    display: block;
+    background: #f3f5f1;
+    color: #1a2e1a;
+    font-family: 'Inter', Arial, sans-serif;
+    border: none;
+}
+
+/* =========================================
+   SECTION 1 - TITLE AND FILTERS
+========================================= */
+
+.buyer-main .buyer-header {
+    width: 100%;
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 22px;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.buyer-main .buyer-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #143312;
+    line-height: 1.2;
+    margin: 0 0 22px;
+    max-width: 100%;
+    text-shadow: none;
+}
+
+/* ===== FILTER FORM ===== */
+
+.buyer-main .buyer-filter-bar {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+    align-items: end;
+    background: #f8faf7;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.buyer-main .filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.buyer-main .filter-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #294729;
+}
+
+/* INPUTS AND SELECT FIELDS */
+
+.buyer-main .filter-select,
+.buyer-main .filter-input {
+    width: 100%;
+    min-width: 0;
+    height: 43px;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 12px;
+    color: #263b26;
+    background: #ffffff;
+    border: 1px solid #d4ded1;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.buyer-main .filter-select {
+    cursor: pointer;
+}
+
+.buyer-main .filter-input:focus,
+.buyer-main .filter-select:focus {
+    border-color: #298804;
+    box-shadow: 0 0 0 2px rgba(41,136,4,0.10);
+}
+
+/* ===== PRICE RANGE ===== */
+
+.buyer-main .price-range-wrap {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+    min-width: 0;
+}
+
+.buyer-main .price-range-wrap .filter-input {
+    min-width: 0;
+    flex: 1;
+}
+
+.buyer-main .price-dash {
+    font-weight: 800;
+    color: #294729;
+}
+
+/* ===== SEARCH BUTTON ===== */
+
+.buyer-main .search-btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    min-width: 150px;
+    padding: 12px 35px;
+    background: #298804;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.buyer-main .search-btn:hover {
+    background: #144203;
+}
+
+/* =========================================
+   SECTION 2 - LISTINGS AND SIDEBAR
+========================================= */
+
+.buyer-main .buyer-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 22px;
+    align-items: start;
+    padding: 0;
+    border: none;
+}
+
+.buyer-main .listings-wrap {
+    min-width: 0;
+}
+
+.buyer-main .listings-title {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 900;
+    color: #143312;
+    margin: 0 0 18px;
+}
+
+/* =========================================
+   BUYER LISTING CARDS
+   THREE CARDS IN ONE ROW
+========================================= */
+
+.buyer-main .buyer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    align-items: stretch;
+}
+
+/* INDIVIDUAL BUYER CARDS */
+
+.buyer-main .buyer-card {
+    min-width: 0;
+    padding: 18px 14px;
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.buyer-main .buyer-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+}
+
+/* BUYER NAME */
+
+.buyer-main .buyer-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #143312;
+    line-height: 1.5;
+    margin: 0 0 14px;
+    overflow-wrap: anywhere;
+}
+
+/* BUYER DETAILS */
+
+.buyer-main .buyer-detail {
+    font-size: 12px;
+    color: #505c50;
+    line-height: 1.7;
+    margin: 0 0 7px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.buyer-main .buyer-detail span {
+    font-weight: 800;
+    color: #294729;
+}
+
+/* =========================================
+   PHONE / WHATSAPP BUTTON
+========================================= */
+
+.buyer-main .phone-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: #298804;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.buyer-main .phone-btn:hover {
+    background: #144203;
+}
+
+/* VERIFIED BADGE */
+
+.buyer-main .verified-badge {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 10px;
+    background: #e4f4df;
+    color: #237016;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* =========================================
+   SECTION 3 - RIGHT SIDEBAR
+========================================= */
+
+.buyer-main .buyer-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+/* SIDEBAR BOXES */
+
+.buyer-main .sidebar-box {
+    background: #ffffff;
+    padding: 19px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+/* SIDEBAR TITLES */
+
+.buyer-main .sidebar-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 900;
+    color: #143312;
+    margin: 0 0 14px;
+    text-decoration: none;
+}
+
+/* IMPORTANT NOTES */
+
+.buyer-main .sidebar-text {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.7;
+    color: #505c50;
+    text-align: center;
+    margin: 0;
+}
+
+/* QUICK TOOLS AND HOW IT WORKS */
+
+.buyer-main .tools-list,
+.buyer-main .how-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.buyer-main .tool-item,
+.buyer-main .how-item {
+    position: relative;
+    padding-left: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #505c50;
+    margin-bottom: 12px;
+}
+
+.buyer-main .tool-item::before,
+.buyer-main .how-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #7ac16a;
+    font-weight: 900;
+}
+
+.buyer-main .how-item strong {
+    color: #143312;
+    font-weight: 800;
+}
+
+/* =========================================
+   NO RESULTS MESSAGE - JAVASCRIPT
+========================================= */
+
+.buyer-main .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #8a3b30;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .buyer-main {
+        padding: 20px;
+    }
+
+    .buyer-main .buyer-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .buyer-main .buyer-sidebar {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    .buyer-main .buyer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 650px) {
+
+    .buyer-main {
+        padding: 15px;
+    }
+
+    .buyer-main .buyer-header {
+        padding: 18px 12px;
+    }
+
+    .buyer-main .buyer-title {
+        font-size: 23px;
+    }
+
+    .buyer-main .buyer-filter-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 13px;
+        gap: 12px;
+    }
+
+    .buyer-main .search-btn {
+        width: 100%;
+        grid-column: 1 / -1;
+    }
+
+    .buyer-main .buyer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .buyer-main .buyer-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .buyer-main .buyer-card {
+        padding: 18px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .buyer-main {
+        padding: 10px;
+    }
+
+    .buyer-main .buyer-title {
+        font-size: 20px;
+    }
+
+    .buyer-main .filter-label {
+        font-size: 11px;
+    }
+
+    .buyer-main .filter-input,
+    .buyer-main .filter-select {
+        font-size: 11px;
+        padding: 7px;
+    }
+
+    .buyer-main .buyer-filter-bar {
+        gap: 9px;
+    }
+
+}

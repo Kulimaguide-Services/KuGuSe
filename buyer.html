@@ -32,9 +32,138 @@
     <!--The main content of the webpage-->
     <!--This part of the webpage will change depending on the webpage-->
     <main>
-     
+     <main class="buyer-main">
+
+  <!-- SECTION 1 - TITLE + FILTERS -->
+  <section class="buyer-header">
+    <h1 class="buyer-title">FIND VERIFIED BUYERS NEAR YOU</h1>
+
+    <form class="buyer-filter-bar">
+      <div class="filter-field">
+        <label class="filter-label">Crop Type</label>
+        <select class="filter-select crop-select">
+          <option value="all">All</option>
+          <option value="maize">Maize</option>
+          <option value="soya">Soya</option>
+          <option value="groundnuts">Groundnuts</option>
+          <option value="beans">Beans</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Location (District)</label>
+        <select class="filter-select district-select">
+          <option value="all">All</option>
+          <option value="kasama">Kasama</option>
+          <option value="mungwi">Mungwi</option>
+          <option value="chililabombwe">Chililabombwe</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Quantity Needed</label>
+        <input type="number" class="filter-input quantity-input" placeholder="___ tons">
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Price Range</label>
+        <div class="price-range-wrap">
+          <input type="number" class="filter-input price-min-input" placeholder="___">
+          <span class="price-dash">-</span>
+          <input type="number" class="filter-input price-max-input" placeholder="___">
+        </div>
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Buyer Type</label>
+        <select class="filter-select buyer-type-select">
+          <option value="all">All</option>
+          <option value="individual">Individual</option>
+          <option value="milling-company">Milling Company</option>
+          <option value="exporter">Exporters</option>
+        </select>
+      </div>
+
+      <button type="submit" class="search-btn">Search Button</button>
+    </form>
+  </section>
+
+  <!-- SECTION 2 - LISTINGS + ASIDE -->
+  <section class="buyer-layout">
+
+    <!-- BUYER LISTINGS -->
+    <div class="listings-wrap">
+      <h2 class="listings-title">BUYER LISTINGS — 3 RESULTS</h2>
+
+      <div class="buyer-grid">
+
+        <!-- CARD 1 -->
+        <article class="buyer-card" data-crop="maize" data-district="kasama" data-quantity="20" data-price="120" data-buyer-type="milling-company">
+          <h3 class="buyer-name">Buyer Name: AgroMill Ltd</h3>
+          <p class="buyer-detail"><span>Location:</span> Kasama, Zambia</p>
+          <p class="buyer-detail"><span>Crop Needed:</span> Maize</p>
+          <p class="buyer-detail"><span>Quantity:</span> 20 Tons</p>
+          <p class="buyer-detail"><span>Price Offer:</span> 120 ZMW per 50kg</p>
+          <button type="button" class="phone-btn">📞 Phone/WhatsApp</button>
+          <span class="verified-badge">[✓] Verified Badge</span>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="buyer-card" data-crop="soya" data-district="mungwi" data-quantity="15" data-price="150" data-buyer-type="individual">
+          <h3 class="buyer-name">Buyer Name: Northern Grains Co.</h3>
+          <p class="buyer-detail"><span>Location:</span> Mungwi, Zambia</p>
+          <p class="buyer-detail"><span>Crop Needed:</span> Soya</p>
+          <p class="buyer-detail"><span>Quantity:</span> 15 Tons</p>
+          <p class="buyer-detail"><span>Price Offer:</span> 150 ZMW per 50kg</p>
+          <button type="button" class="phone-btn">📞 Phone/WhatsApp</button>
+          <span class="verified-badge">[✓] Verified Badge</span>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="buyer-card" data-crop="maize" data-district="chililabombwe" data-quantity="50" data-price="110" data-buyer-type="exporter">
+          <h3 class="buyer-name">Buyer Name: Export Agri Traders</h3>
+          <p class="buyer-detail"><span>Location:</span> Chililabombwe, Zambia</p>
+          <p class="buyer-detail"><span>Crop Needed:</span> Maize</p>
+          <p class="buyer-detail"><span>Quantity:</span> 50 Tons</p>
+          <p class="buyer-detail"><span>Price Offer:</span> 110 ZMW per 50kg</p>
+          <button type="button" class="phone-btn">📞 Phone/WhatsApp</button>
+          <span class="verified-badge">[✓] Verified Badge</span>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ASIDE -->
+    <aside class="buyer-sidebar">
+      <div class="sidebar-box important-notes">
+        <h3 class="sidebar-title">IMPORTANT NOTES</h3>
+        <p class="sidebar-text">We only connect, we do not sell, buy or transport any goods!</p>
+      </div>
+
+      <div class="sidebar-box quick-tools">
+        <h3 class="sidebar-title">QUICK TOOLS</h3>
+        <ul class="tools-list">
+          <li class="tool-item">Weather-Based Planting Guide</li>
+          <li class="tool-item">Soil Type Matcher</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-box how-it-works">
+        <h3 class="sidebar-title">HOW IT WORKS</h3>
+        <ul class="how-list">
+          <li class="how-item"><strong>1. Search</strong><br>use filters to find buyers</li>
+          <li class="how-item"><strong>2. Contact</strong><br>message via Phone/WhatsApp</li>
+          <li class="how-item"><strong>3. Negotiate Directly</strong><br>deal off-platform</li>
+        </ul>
+      </div>
+    </aside>
+
+  </section>
+
+</main>
+
    
-    </main>
+    
 
    <!-- FOOTER: Matches wireframe -->
       <footer class="foot">
