@@ -360,3 +360,307 @@ document.addEventListener("DOMContentLoaded", function () {
     filterTips();
 
 });
+
+/* =========================================
+   KULIMAGUIDE - BUYERS PAGE
+   Search and Filter Functionality
+   Page-specific JavaScript
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Select the Buyers page only
+    const buyerMain = document.querySelector(".buyer-main");
+
+    // Prevent interference with other pages
+    if (!buyerMain) return;
+
+    // Get HTML elements
+    const form = buyerMain.querySelector(".buyer-filter-bar");
+
+    const cropSelect = buyerMain.querySelector(".crop-select");
+    const districtSelect = buyerMain.querySelector(".district-select");
+    const quantityInput = buyerMain.querySelector(".quantity-input");
+    const priceMinInput = buyerMain.querySelector(".price-min-input");
+    const priceMaxInput = buyerMain.querySelector(".price-max-input");
+    const buyerTypeSelect = buyerMain.querySelector(".buyer-type-select");
+
+    const cards = buyerMain.querySelectorAll(".buyer-card");
+    const grid = buyerMain.querySelector(".buyer-grid");
+    const listingsTitle = buyerMain.querySelector(".listings-title");
+
+    // Store original title
+    const originalTitle = "BUYER LISTINGS";
+
+    // Create no-results message
+    const noResults = document.createElement("p");
+
+    noResults.className = "no-results";
+    noResults.textContent =
+        "No buyers found. Try changing your search filters.";
+
+    noResults.style.display = "none";
+
+    grid.appendChild(noResults);
+
+
+    // =====================================
+    // VALIDATION FUNCTION
+    // =====================================
+
+    function validateInputs() {
+
+        const quantity = quantityInput.value.trim();
+        const minimum = priceMinInput.value.trim();
+        const maximum = priceMaxInput.value.trim();
+
+        // Check quantity
+        if (quantity !== "" &&
+            (!Number.isFinite(Number(quantity)) ||
+             Number(quantity) <= 0)) {
+
+            return "Please enter a valid quantity greater than zero.";
+        }
+
+        // Check minimum price
+        if (minimum !== "" &&
+            (!Number.isFinite(Number(minimum)) ||
+             Number(minimum) < 0)) {
+
+            return "Please enter a valid minimum price.";
+        }
+
+        // Check maximum price
+        if (maximum !== "" &&
+            (!Number.isFinite(Number(maximum)) ||
+             Number(maximum) < 0)) {
+
+            return "Please enter a valid maximum price.";
+        }
+
+        // Check price range
+        if (minimum !== "" && maximum !== "" &&
+            Number(minimum) > Number(maximum)) {
+
+            return "Minimum price cannot be greater than maximum price.";
+        }
+
+        return "";
+    }
+
+
+    // =====================================
+    // BUYER FILTER FUNCTION
+    // =====================================
+
+    function filterBuyers() {
+
+        // Read selected filter values
+        const crop = cropSelect.value.toLowerCase();
+
+        const district = districtSelect.value.toLowerCase();
+
+        const buyerType = buyerTypeSelect.value.toLowerCase();
+
+        const quantityText = quantityInput.value.trim();
+
+        const minimumText = priceMinInput.value.trim();
+
+        const maximumText = priceMaxInput.value.trim();
+
+
+        // Validate entered information
+        const errorMessage = validateInputs();
+
+        if (errorMessage !== "") {
+
+            noResults.textContent = errorMessage;
+            noResults.style.display = "block";
+
+            cards.forEach(function (card) {
+                card.style.display = "none";
+            });
+
+            listingsTitle.textContent = originalTitle + " — 0 RESULTS";
+
+            return;
+        }
+
+
+        // Convert values into numbers
+        const requiredQuantity =
+            quantityText === "" ? null : Number(quantityText);
+
+        const minimumPrice =
+            minimumText === "" ? null : Number(minimumText);
+
+        const maximumPrice =
+            maximumText === "" ? null : Number(maximumText);
+
+
+        // Count matching buyers
+        let visibleCount = 0;
+
+
+        // Check each buyer card
+        cards.forEach(function (card) {
+
+            // Get buyer information from HTML
+            const cardCrop = card.dataset.crop.toLowerCase();
+
+            const cardDistrict = card.dataset.district.toLowerCase();
+
+            const cardBuyerType =
+                card.dataset.buyerType.toLowerCase();
+
+            const cardQuantity = Number(card.dataset.quantity);
+
+            const cardPrice = Number(card.dataset.price);
+
+
+            // 1. CROP TYPE FILTER
+            const matchCrop =
+                crop === "all" || cardCrop === crop;
+
+
+            // 2. DISTRICT FILTER
+            const matchDistrict =
+                district === "all" || cardDistrict === district;
+
+
+            // 3. BUYER TYPE FILTER
+            const matchBuyerType =
+                buyerType === "all" ||
+                cardBuyerType === buyerType;
+
+
+            // 4. QUANTITY FILTER
+            // Show buyers who need the entered quantity or more
+            const matchQuantity =
+                requiredQuantity === null ||
+                cardQuantity >= requiredQuantity;
+
+
+            // 5. PRICE FILTER
+            // Apply minimum and maximum prices
+            const matchMinimum =
+                minimumPrice === null ||
+                cardPrice >= minimumPrice;
+
+            const matchMaximum =
+                maximumPrice === null ||
+                cardPrice <= maximumPrice;
+
+
+            // CHECK ALL FILTER CONDITIONS
+            if (
+                matchCrop &&
+                matchDistrict &&
+                matchBuyerType &&
+                matchQuantity &&
+                matchMinimum &&
+                matchMaximum
+            ) {
+
+                // Show matching buyer
+                card.style.display = "";
+
+                visibleCount++;
+
+            } else {
+
+                // Hide non-matching buyer
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        // =================================
+        // UPDATE SEARCH RESULTS
+        // =================================
+
+        listingsTitle.textContent =
+            originalTitle + " — " + visibleCount + " RESULTS";
+
+
+        // Display message if no buyer is found
+        if (visibleCount === 0) {
+
+            noResults.textContent =
+                "No buyers found. Try changing your search filters.";
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+    }
+
+
+    // =====================================
+    // SEARCH BUTTON FUNCTIONALITY
+    // =====================================
+
+    form.addEventListener("submit", function (event) {
+
+        // Prevent page refresh
+        event.preventDefault();
+
+        // Run buyer search
+        filterBuyers();
+
+    });
+
+
+    // =====================================
+    // LIVE FILTERING
+    // =====================================
+
+    cropSelect.addEventListener("change", filterBuyers);
+
+    districtSelect.addEventListener("change", filterBuyers);
+
+    buyerTypeSelect.addEventListener("change", filterBuyers);
+
+    quantityInput.addEventListener("input", filterBuyers);
+
+    priceMinInput.addEventListener("input", filterBuyers);
+
+    priceMaxInput.addEventListener("input", filterBuyers);
+
+
+    // =====================================
+    // RESET FILTERS
+    // =====================================
+
+    form.addEventListener("reset", function () {
+
+        setTimeout(function () {
+
+            // Show all buyer cards
+            cards.forEach(function (card) {
+                card.style.display = "";
+            });
+
+            // Restore original title and count
+            listingsTitle.textContent =
+                originalTitle + " — " + cards.length + " RESULTS";
+
+            // Hide error/no-results message
+            noResults.style.display = "none";
+
+        }, 0);
+
+    });
+
+
+    // INITIAL RESULT COUNT
+    listingsTitle.textContent =
+        originalTitle + " — " + cards.length + " RESULTS";
+
+});
