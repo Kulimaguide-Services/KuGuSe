@@ -5,7 +5,7 @@
 
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name = "author" content="Go comapny">
+ <meta name = "ESTHER CHILESHES" content="Go comapny">
 <meta name="keywords" content=GO,Kulima,Farm,Kulimaguide,Farming>
  <title>Find Supplier | Kulimaguide Services </title>
  <meta name="description" content="Kulimaguide Services connects farmers to trusted suppliers,
@@ -34,11 +34,163 @@ buyers, and reliable transporters. Plus free farming tips for different crops, s
 </ul>
 </nav> 
 </header>
+<main class="supplier-main">
 
-  <main>  <!-- MAIN CONTENT -->
- 
-  </main>
+  <!-- SECTION 1 - TITLE + FILTERS -->
+  <section class="supplier-header">
+    <h1 class="supplier-title">FIND TRUSTED FARM INPUT SUPPLIERS</h1>
 
+    <form class="supplier-filter-bar">
+      <div class="filter-field">
+        <label class="filter-label">Input Type</label>
+        <select class="filter-select input-type-select">
+          <option value="all">All</option>
+          <option value="seeds">Seeds</option>
+          <option value="fertilizer">Fertilizer</option>
+          <option value="pesticides">Pesticides</option>
+          <option value="tools">Tools</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Brand</label>
+        <input type="text" class="filter-input brand-input" placeholder="Brand">
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Location District</label>
+        <input type="text" class="filter-input district-input" placeholder="District">
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">Price Range</label>
+        <input type="text" class="filter-input price-input" placeholder="e.g. 0-500">
+      </div>
+
+      <div class="filter-field">
+        <label class="filter-label">In Stock</label>
+        <select class="filter-select stock-select">
+          <option value="all">Yes / No</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <button type="submit" class="search-btn">Search Button</button>
+    </form>
+  </section>
+
+  <!-- SECTION 2 - LISTINGS + ASIDE -->
+  <section class="supplier-layout">
+
+    <!-- SUPPLIER LISTINGS -->
+    <div class="listings-wrap">
+      <h2 class="listings-title">SUPPLIER LISTINGS</h2>
+
+      <div class="supplier-grid">
+
+       <!-- SUPPLIER 1: SEEDS -->
+            <article>
+                <h3>Maize Seed Supplier</h3>
+
+                <!-- INSERT MAIZE SEEDS IMAGE HERE -->
+                <img src="C:\Users\2pluss\Documents\try\4.jpeg"
+                     alt="Maize seeds for planting"
+                     width="250" height="250">
+
+                <p><strong>Category:</strong> Seeds</p>
+                <p><strong>Location:</strong> Lusaka</p>
+                <p><strong>Price:</strong> K500</p>
+                <p><strong>Availability:</strong> In Stock</p>
+
+                <p>Supplier of seeds for crop production.</p>
+
+                <a href="supplier-details.html">View Supplier</a>
+        </article>
+
+       <!-- SUPPLIER 2: FERTILIZERS -->
+            <article>
+                <h3>Fertilizer Supplier</h3>
+
+                <!-- INSERT FERTILIZER IMAGE HERE -->
+                <img src="C:\Users\2pluss\Documents\try\3.jpeg"
+                     alt="Fertilizer bags for crop production"
+                     width="250" height="250">
+
+                <p><strong>Category:</strong> Fertilizers</p>
+                <p><strong>Location:</strong> Lusaka</p>
+                <p><strong>Price:</strong> K800</p>
+                <p><strong>Availability:</strong> In Stock</p>
+
+                <p>Supplier of agricultural fertilizers.</p>
+
+                <a href="supplier-details.html">View Supplier</a>
+            </article>
+
+        <!-- SUPPLIER 3: FARM EQUIPMENT -->
+            <article>
+                <h3>Farm Equipment Supplier</h3>
+
+                <!-- INSERT TRACTOR OR FARM TOOLS IMAGE HERE -->
+                <img src="C:\Users\2pluss\Documents\try\2.jpeg"
+                     alt="Tractor and agricultural farming equipment"
+                     width="250" height="250">
+
+                <p><strong>Category:</strong> Farming Equipment</p>
+                <p><strong>Location:</strong> Ndola</p>
+                <p><strong>Price:</strong> Contact Supplier</p>
+                <p><strong>Availability:</strong> Available</p>
+
+                <p>Supplier of tractors and farming equipment.</p>
+
+                <a href="supplier-details.html">View Supplier</a>
+            </article>
+
+
+       <!-- SUPPLIER 4: IRRIGATION -->
+            <article>
+                <h3>Irrigation Supplier</h3>
+
+                <!-- INSERT IRRIGATION EQUIPMENT IMAGE HERE -->
+                <img src="C:\Users\2pluss\Documents\try\1.jpeg"
+                     alt="Irrigation equipment for watering crops"
+                     width="250" height="250">
+
+                <p><strong>Category:</strong> Irrigation</p>
+                <p><strong>Location:</strong> Lusaka</p>
+                <p><strong>Price:</strong> Contact Supplier</p>
+                <p><strong>Availability:</strong> Available</p>
+
+                <p>Supplier of irrigation systems and water pumps.</p>
+
+                <a href="supplier-details.html">View Supplier</a>
+            </article>
+
+
+      </div>
+    </div>
+
+    <!-- ASIDE -->
+    <aside class="supplier-sidebar">
+      <div class="sidebar-box important-notes">
+        <h3 class="sidebar-title">IMPORTANT NOTES</h3>
+        <p class="sidebar-text">We only connect, we do not sell, buy or transport any goods!</p>
+      </div>
+
+      <div class="sidebar-box quick-tools">
+        <h3 class="sidebar-title">QUICK TOOLS</h3>
+        <ul class="tools-list">
+          <li class="tool-item">Weather-Based Planting Guide</li>
+          <li class="tool-item">Soil Type Matcher</li>
+        </ul>
+      </div>
+    </aside>
+
+  </section>
+
+</main>
+    
+      
 
  <!-- FOOTER: Matches wireframe -->
       <footer class="foot">
